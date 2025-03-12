@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts of Dynamic Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="post.html" class="nav-link">Posts</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <!-- Posts Section -->
+        <section id="posts" class="grid-item">
+            <h2>Posts</h2>
+            <article id="post_content"></article>
+            <button id="moretoload">Next pages</button>
+        </section>
+
+        <aside id="sidebar" class="grid-item">
+            <h2>Content</h2>
+            <ul>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="contact-details">
+            <p>Contact Us:</p>
+            <ul>
+                <li>Email: <a href="mailto:chrismymail@yahoo.com">chrismymail@yahoo.com</a></li>
+                <li>Phone: <a href="tel:+123456789">+123-456-789</a></li>
+                <li>Address: 123 ContactRoad, Kristianstad, HKR 123</li>
+            </ul>
+        </div>
+        <p>&copy; 2025 No Copyrights</p>
+    </footer>
+
+    <!-- User Modal -->
+    <div id="modelofuser" class="modal hidden">
+        <div class="modal-content">
+            <button id="close_modal">X</button>
+            <h3>User Profile</h3>
+            <div id="infoofuser"></div>
+        </div>
+    </div>
+
+    <script src="post.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    
+}
+
+h1, h2, h3, h4 {
+    margin-top: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "aside home"
+        "aside posts"
+        "aside contact"
+        "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto auto auto auto;
+    min-height: 100vh;
+    gap: 20px;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    
+}
+
+/* Sidebar */
+#sidebar {
+    color:white;
+    grid-area: aside;
+    background: linear-gradient(to right, #44095e, #0b6aa9);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+#sidebar ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Home Section */
+#home {
+    grid-area: home;
+    background: linear-gradient(to right, #44095e, #0b6aa9);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    height: auto;
+}
+
+/* Posts Section */
+#posts {
+    height: auto;
+    grid-area: posts;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Contact Section */
+#contact {
+    color:darkblue ;
+    grid-area: contact;
+    padding: 20px;
+    background-color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: darkblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:disabled {
+    background:red;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background: #367c39;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #44095e, #0b6aa9);
+    color: white;
+}
+
+.image-section{
+    width:200px ;
+    height: 200px;
+
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #44095e, #0b6aa9);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 16px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    color: #4CAF50;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.contact-details{
+    text-align: left;
+}
+
+.contact-details a {
+    color: skyblue;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "aside"
+            "home"
+            "posts"
+            "contact"
+            "footer";
+    }
+
+    #sidebar {
+        padding: 15px;
+        text-align: center;
+    }
+
+    #posts {
+        margin-bottom: 20px;
+    }
+}

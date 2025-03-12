@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const postElement = document.createElement('article');
             postElement.className = 'post';
 
+            const postDate = new Date(post.createdAt).toLocaleDateString();
+
             // Handle reactions 
             let reactionsDisplay = '';
             if (typeof post.reactions === 'object') {
@@ -60,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>By:</strong> <a href="#" class="user-link" data-userid="${user.id}">${user.username}</a></p>
                 <h4>Comments:</h4>
                 <ul>${comments.length ? comments.map(c => `<li>${c.body}</li>`).join('') : '<li>No comments available.</li>'}</ul>
-            `;
+                
+            `;//<p><String>date:</strong> ${postDate}</p>
 
             PostContent.appendChild(postElement);
         } catch (error) {
@@ -97,6 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load more posts 
+
+    //loadMoare.addEventListener('click', () => {
+    //setTimeout(() => { }, 3000); // Delays by 3 seconds (3000ms)
+
+
     loadMoare.addEventListener('click', () => {
         currentPage++;
         fetchPosts(currentPage);
@@ -114,12 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open user profile 
     function openUserModal(user) {
-        userInfo.innerHTML = `
+        userInfo.innerHTML = `  
+            <img src="contact.png" alt="Dynamic Web Image" class="image-section">
             <p><strong>Name:</strong> ${user.firstName} ${user.lastName}</p>
             <p><strong>Email:</strong> ${user.email}</p>
             <p><strong>Address:</strong> ${user.address.city}, ${user.address.state}</p>
             <p><strong>Phone:</strong> ${user.phone}</p>
             <p><strong>Company:</strong> ${user.company.name}</p>
+            
         `;
         userModal.classList.remove('hidden');
     }

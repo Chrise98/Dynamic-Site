@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmCheckbox.addEventListener('change', checkingForm);
 
     // Handle form submission
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    contactForm.addEventListener('submit', (sub) => {
+        sub.preventDefault();
         alert('Congrats you have submited your form');
         contactForm.reset();
         sendButton.disabled = true; // Disable button after submission

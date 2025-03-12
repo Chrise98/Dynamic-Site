@@ -86,6 +86,8 @@ header {
     background-color: #fff;
 }
 
+
+
 /* Contact Section */
 #contact {
     color:darkblue ;
@@ -111,6 +113,13 @@ input, textarea {
     border-radius: 5px;
 }
 
+#modelofuser{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+/* Butotm of the writer and contact */
 button {
     margin-top: 15px;
     padding: 10px 20px;
@@ -187,6 +196,7 @@ footer {
     display: none;
 }
 
+/* The writer */
 .modal-content {
     background: #fff;
     padding: 20px;
